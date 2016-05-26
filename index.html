@@ -102,29 +102,92 @@
 					</section>
 				</section>
                 <section>
-
                     <section data-markdown="">
                         ## Solr
                         - EE connector
                         - old versions (3.6 from 2012)
-                        - 3rd party module in beta phase
+                    </section>
+                    <section data-markdown="">
+                        ## Alternatives again
+                        - 3rd party module
                         - worked out of the box
+                        - extendable
+                    </section>
+                    <section data-markdown="">
+                        ## Pros of the module
+                        - easy controllable
+                        - attribute boost
+                        - good communication with the developers
+                    </section>
+                    <section data-markdown="">
+                        ## More than simple search replacement
+						- auto suggest without magento interaction
+						- skip from index
+						- per product boost
                     </section>
                 </section>
-
-				<section >
-					<h2>Outline</h2>
-					<ul>
-						<li>Initial Idea</li>
-						<li>Replace Search</li>
-						<div class="fragment fade-in"><div class="fragment fade-out">What else?</div></div>
-						<li class="fragment">Replace Collections</li>
-						<li class="fragment">Replace Data supply</li>
-						<li class="fragment">Replace PDP</li>
-					</ul>
+				<section>
+					<section data-markdown="">
+						## Enhance Solr usage
+						- infrastructure already in place
+						- most of the data already indexed
+						- got inspired by community members <!--@tim_bezhashvyly, @vinaikopp, @fabian_ikono -->
+						</section>
+					<section data-markdown="">
+						## Ideas
+						- get category_product relations
+						- get category_view data
+						- get product_view data
+						- keep html of those in solr
+					</section>
+                    <section data-markdown="">
+                        ## Category Product Relations
+                        - all data is there
+                        - search for products with category_id
+                        - filter magento collection
+                        - return to normal magento-flow
+                    </section>
+                    <section data-markdown="">
+                        ## Category view data
+                        - extend the indexer
+                        - more data needed
+                        - get data-JSON from Solr
+                        - put everything into Varien_Collection
+                        - simple adaptions of templates
+                    </section>
+                    <section data-markdown="">
+                        ## Product view data
+                        - all product information into Solr
+                        - rebuild product structure in Solr
+                        - search for Id & child documents
+                        - return data-JSON
+                        - "mock" a product model with data
+                    </section>
+                    <section data-markdown="">
+                        ## Improvements
+                        - rebuild template for direct JSON parsing
+                        - use JS for JSON2HTML templating
+                    </section>
+                    <section data-markdown="">
+                        ## Benefits of HTML in Solr
+                        - most performant solution
+                        - easier scaleable
+                    </section>
+                    <section data-markdown="">
+                        ## Problems with HTML from Solr
+                        - slower indexing
+                        - WAY bigger index (multistore)
+                        - rebuild after data changes
+                        - rebuild after template changes
+                    </section>
 				</section>
-
-
+                <section>
+                    <section data-markdown="">
+                        ## Magento 2
+                        - extension migration already begun
+                        - extended ideas are transferable
+                    </section>
+                </section>
 			</div>
 
 		</div>
